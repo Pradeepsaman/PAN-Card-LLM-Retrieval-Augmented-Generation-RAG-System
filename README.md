@@ -29,3 +29,21 @@ Perform semantic similarity search
 Retrieve relevant context
 
 Generate final answer using OpenAI LLM
+
+
+
+
+User Question
+     ↓
+Embedding Model
+(convert question → vector)
+     ↓
+Vector Database Search
+(find relevant documents)
+     ↓
+Retrieved Context / Data
+     ↓
+LLM
+(question + retrieved data)
+     ↓
+Final Answer (grounded)
