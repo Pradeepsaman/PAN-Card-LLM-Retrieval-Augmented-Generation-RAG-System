@@ -1,49 +1,42 @@
 Problem Statement
 
-Large Language Models (LLMs) do not inherently know private or domain-specific data.
-Directly querying an LLM may lead to:
+Large Language Models (LLMs) do not inherently possess knowledge of private, domain-specific, or real-time data. As a result, directly querying an LLM can lead to several challenges:
 
-Hallucinated responses
+Generation of hallucinated responses
+Inaccurate or generic domain-specific answers
+Lack of grounding in reliable or structured documents
 
-Inaccurate domain answers
-
-Lack of grounding in real documents
-
-This project solves the problem by combining semantic retrieval + LLM generation.
-
+To address these limitations, this project integrates semantic retrieval with LLM-based generation to produce more accurate and context-aware responses.
 
 Solution Approach
 
-The system follows a Retrieval-Augmented Generation (RAG) architecture:
+This project implements a Retrieval-Augmented Generation (RAG) architecture to enhance the reliability of LLM outputs.
 
-Load PAN card related dataset
+**Workflow Overview:**
 
-Split text into manageable chunks
-
-Convert text into embeddings
-
-Store embeddings in FAISS vector database
-
-Perform semantic similarity search
-
-Retrieve relevant context
-
-Generate final answer using OpenAI LLM
+Load PAN card-related dataset
+Split the text into smaller, manageable chunks
+Convert text data into vector embeddings
+Store embeddings in a FAISS vector database
+Perform semantic similarity search based on user queries
+Retrieve the most relevant contextual information
+Generate the final response using an OpenAI LLM
 
 
+**System Architecture Flow:**
 
 
 User Question
-     ↓
+      ↓
 Embedding Model
-(convert question → vector)
-     ↓
-Vector Database Search
-(find relevant documents)
-     ↓
+(Convert question → vector representation)
+      ↓
+Vector Database Search (FAISS)
+(Identify relevant documents)
+      ↓
 Retrieved Context / Data
-     ↓
-LLM
-(question + retrieved data)
-     ↓
-Final Answer (grounded)
+      ↓
+LLM (OpenAI)
+(Combine query + retrieved context)
+      ↓
+Final Answer (Accurate & Context-Aware)
