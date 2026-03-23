@@ -40,3 +40,32 @@ LLM (OpenAI)
 (Combine query + retrieved context)
       ↓
 Final Answer (Accurate & Context-Aware)
+
+
+
+
+
+
+            📄 Documents / Data
+        ("PAN card info", "bank docs", etc.)
+                        ↓
+            🔢 Convert to Embeddings
+        (text → numbers using model)
+                        ↓
+        📦 Store in FAISS Vector Database
+      [vector1, vector2, vector3, ...]
+                        ↓
+------------------------------------------------
+👤 User Question: "How to apply PAN card?"
+                        ↓
+            🔢 Convert Question to Vector
+                        ↓
+        🔍 FAISS Similarity Search
+   (Find nearest / most similar vectors)
+                        ↓
+        📄 Retrieve Relevant Documents
+                        ↓
+        🤖 LLM (ChatGPT / OpenAI)
+   (Question + Retrieved Context)
+                        ↓
+        ✅ Final Accurate Answer
