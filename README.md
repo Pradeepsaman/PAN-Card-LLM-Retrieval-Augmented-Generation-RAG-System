@@ -46,26 +46,26 @@ Final Answer (Accurate & Context-Aware)
 
 
 
-            📄 Documents / Data
+             Documents / Data
         ("PAN card info", "bank docs", etc.)
                         ↓
-            🔢 Convert to Embeddings
+            Convert to Embeddings
         (text → numbers using model)
                         ↓
-        📦 Store in FAISS Vector Database
+         Store in FAISS Vector Database
       [vector1, vector2, vector3, ...]
                         ↓
 ------------------------------------------------
-👤 User Question: "How to apply PAN card?"
+ User Question: "How to apply PAN card?"
                         ↓
-            🔢 Convert Question to Vector
+            Convert Question to Vector
                         ↓
         🔍 FAISS Similarity Search
    (Find nearest / most similar vectors)
                         ↓
-        📄 Retrieve Relevant Documents
+         Retrieve Relevant Documents
                         ↓
-        🤖 LLM (ChatGPT / OpenAI)
+         LLM (ChatGPT / OpenAI)
    (Question + Retrieved Context)
                         ↓
-        ✅ Final Accurate Answer
+         Final Accurate Answer
